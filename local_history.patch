@@ -1,0 +1,2163 @@
+Index: public_html/App/Views/HomeView.php
+===================================================================
+diff --git a/public_html/App/Views/HomeView.php b/public_html/App/Views/HomeView.php
+deleted file mode 100644
+--- a/public_html/App/Views/HomeView.php	
++++ /dev/null	
+@@ -1,39 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="fr">
+-<head>
+-    <meta charset="UTF-8">
+-    <title>Blog Parfum</title>
+-    <link rel="stylesheet" href="path/to/your/css/style.css"> <!-- Assurez-vous que ce lien est correct -->
+-    <!-- Ajoutez Bootstrap CSS -->
+-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+-</head>
+-<body>
+-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+-    <a class="navbar-brand" href="#">Blog Parfum</a>
+-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+-        <span class="navbar-toggler-icon"></span>
+-    </button>
+-    <div class="collapse navbar-collapse" id="navbarNav">
+-        <ul class="navbar-nav">
+-            <li class="nav-item active"><a class="nav-link" href="#">Accueil</a></li>
+-            <li class="nav-item"><a class="nav-link" href="#">Articles</a></li>
+-            <li class="nav-item"><a class="nav-link" href="#">Connexion</a></li>
+-            <li class="nav-item"><a class="nav-link" href="#">Inscription</a></li>
+-            <li class="nav-item"><a class="nav-link" href="#">Déconnexion</a></li>
+-        </ul>
+-    </div>
+-</nav>
+-
+-<div class="container">
+-    <header class="header">
+-        <h1>Bienvenue sur le Blog Parfum</h1>
+-    </header>
+-    <!-- Contenu de la page -->
+-</div>
+-
+-<!-- Bootstrap JS, Popper.js, and jQuery -->
+-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+-</body>
+-</html>
+Index: public_html/App/Views/LoginView.php
+===================================================================
+diff --git a/public_html/App/Views/LoginView.php b/public_html/App/Views/LoginView.php
+deleted file mode 100644
+--- a/public_html/App/Views/LoginView.php	
++++ /dev/null	
+@@ -1,34 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-    <head>
+-        <meta charset="UTF-8">
+-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-        <title>Connexion - Blog Parfum</title>
+-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+-    </head>
+-    <body>
+-        <div class="container">
+-            <div class="row justify-content-center align-items-center" style="height:100vh">
+-                <div class="col-4">
+-                    <div class="card">
+-                        <div class="card-body">
+-                            <h3 class="card-title text-center">Connexion</h3>
+-                            <form method="POST" action="/login">
+-                                <div class="form-group">
+-                                    <label for="email">Adresse Email</label>
+-                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Entrez votre email">
+-                                </div>
+-                                <div class="form-group">
+-                                    <label for="password">Mot de Passe</label>
+-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Mot de Passe">
+-                                </div>
+-                                <button type="submit" class="btn btn-primary">Connexion</button>
+-                            </form>
+-                        </div>
+-                    </div>
+-                </div>
+-            </div>
+-        </div>
+-    </body>
+-</html>
+-
+Index: public_html/App/Views/PostsView.php
+===================================================================
+diff --git a/public_html/App/Views/PostsView.php b/public_html/App/Views/PostsView.php
+deleted file mode 100644
+--- a/public_html/App/Views/PostsView.php	
++++ /dev/null	
+@@ -1,27 +0,0 @@
+-<!-- PostView.php -->
+-
+-<!DOCTYPE html>
+-<html>
+-<head>
+-    <meta charset="UTF-8">
+-    <title>Afficher l'Article</title>
+-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+-</head>
+-    <body>
+-        <div class="container">
+-            <h2 class="mt-5">Détails de l'Article</h2>
+-            <div class="card mt-4">
+-                <div class="card-body">
+-                    <?php if (!empty($post)): ?>
+-                        <h3 class="card-title"><?php echo $post['title']; ?></h3>
+-                        <p class="card-text"><?php echo $post['content']; ?></p>
+-                    <?php else: ?>
+-                        <p>L'article demandé n'existe pas.</p>
+-                    <?php endif; ?>
+-                </div>
+-            </div>
+-            <a href="/home" class="btn btn-primary mt-4">Retour à la liste des articles</a>
+-        </div>
+-    </body>
+-</html>
+-<?php
+Index: public_html/App/Views/LogoutView.php
+===================================================================
+diff --git a/public_html/App/Views/LogoutView.php b/public_html/App/Views/LogoutView.php
+deleted file mode 100644
+--- a/public_html/App/Views/LogoutView.php	
++++ /dev/null	
+@@ -1,16 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-<head>
+-    <meta charset="UTF-8">
+-    <title>Profil de l'utilisateur</title>
+-    <!-- Vos styles CSS et scripts JavaScript ici -->
+-</head>
+-<body>
+-<h2>Bienvenue, nom de l'utilisateur</h2>
+-
+-<!-- Ajoutez un formulaire de déconnexion -->
+-<form action="/logout" method="POST">
+-    <button type="submit">Déconnexion</button>
+-</form>
+-</body>
+-</html>
+Index: public_html/App/Views/RegisterView.php
+===================================================================
+diff --git a/public_html/App/Views/RegisterView.php b/public_html/App/Views/RegisterView.php
+deleted file mode 100644
+--- a/public_html/App/Views/RegisterView.php	
++++ /dev/null	
+@@ -1,36 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-<head>
+-    <meta charset="UTF-8">
+-    <title>Inscription</title>
+-    <!-- Inclure les fichiers CSS de Bootstrap -->
+-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+-</head>
+-<body>
+-<div class="container">
+-    <h2 class="mt-5">Inscription</h2>
+-    <form action="/register" method="post">
+-        <div class="form-group">
+-            <label for="username">Nom d'utilisateur :</label>
+-            <input type="text" class="form-control" id="username" name="username" required>
+-        </div>
+-
+-        <div class="form-group">
+-            <label for="email">E-mail :</label>
+-            <input type="email" class="form-control" id="email" name="email" required>
+-        </div>
+-
+-        <div class="form-group">
+-            <label for="password">Mot de passe :</label>
+-            <input type="password" class="form-control" id="password" name="password" required>
+-        </div>
+-
+-        <button type="submit" class="btn btn-primary">S'inscrire</button>
+-    </form>
+-</div>
+-
+-<!-- Inclure les fichiers JavaScript de Bootstrap (jQuery et Popper.js requis) -->
+-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+-<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+-</body>
+-</html>
+Index: public_html/App/Views/PostsEditView.php
+===================================================================
+diff --git a/public_html/App/Views/PostsEditView.php b/public_html/App/Views/PostsEditView.php
+deleted file mode 100644
+--- a/public_html/App/Views/PostsEditView.php	
++++ /dev/null	
+@@ -1,25 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-<head>
+-    <meta charset="UTF-8">
+-    <title>Modifier l'Article</title>
+-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+-</head>
+-    <body>
+-        <div class="container">
+-            <h2>Modifier l'Article</h2>
+-            <form action="/edit-post/<?php $post = $post['id']; ?>" method="POST">
+-                <input type="hidden"  id="id" name="id" value="<?= $post?>">
+-                <div class="form-group">
+-                    <label for="title">Titre de l'article :</label>
+-                    <input type="text" class="form-control" id="title" name="title" value="<?= $post['title'] ?>" required>
+-                </div>
+-                <div class="form-group">
+-                    <label for="content">Contenu de l'article :</label>
+-                    <textarea class="form-control" id="content" name="content" rows="5" required><?= $post['content'] ?></textarea>
+-                </div>
+-                <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+-            </form>
+-        </div>
+-    </body>
+-</html>
+Index: public_html/App/Views/PostsCreationView.php
+===================================================================
+diff --git a/public_html/App/Views/PostsCreationView.php b/public_html/App/Views/PostsCreationView.php
+deleted file mode 100644
+--- a/public_html/App/Views/PostsCreationView.php	
++++ /dev/null	
+@@ -1,24 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-<head>
+-    <meta charset="UTF-8">
+-    <title>Soumettre un Article</title>
+-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+-</head>
+-    <body>
+-        <div class="container">
+-            <h2>Creer un Article</h2>
+-            <form action="/create-post" method="POST">
+-                <div class="form-group">
+-                    <label for="title">Titre de l'article:</label>
+-                    <input type="text" class="form-control" id="title" name="title" required>
+-                </div>
+-                <div class="form-group">
+-                    <label for="content">Contenu de l'article:</label>
+-                    <textarea class="form-control" id="content" name="content" rows="5" required placeholder="Saisissez le contenu de l'article"></textarea>
+-                </div>
+-                <button type="submit" class="btn btn-primary">Soumettre</button>
+-            </form>
+-        </div>
+-    </body>
+-</html>
+Index: public_html/App/Models/PostModel.php
+===================================================================
+diff --git a/public_html/App/Models/PostModel.php b/public_html/App/Models/PostModel.php
+deleted file mode 100644
+--- a/public_html/App/Models/PostModel.php	
++++ /dev/null	
+@@ -1,57 +0,0 @@
+-<?php
+-
+-namespace App\Models;
+-use App\BaseController;
+-use App\Models\DatabaseModel;
+-
+-class PostModel
+-{
+-
+-    public static function getAllPosts()
+-    {
+-        $conn = DatabaseModel::getConn();
+-        $query = "SELECT * FROM Posts";
+-        $stmt = $conn->prepare($query);
+-        $stmt->execute();
+-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+-    }
+-    public static function getPostById($postId)
+-    {
+-        $conn = DatabaseModel::getConn();
+-        $query = "SELECT * FROM Posts WHERE id = :id";
+-        $stmt = $conn->prepare($query);
+-        $stmt->bindParam(':id', $postId, \PDO::PARAM_INT);
+-        $stmt->execute();
+-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+-    }
+-
+-    public static function createPost($postData)
+-    {
+-        $conn = DatabaseModel::getConn();
+-        $query = "INSERT INTO Posts (title, content) VALUES (:title, :content)";
+-        $stmt = $conn->prepare($query);
+-        $stmt->bindParam(':title', $postData['title'], \PDO::PARAM_STR);
+-        $stmt->bindParam(':content', $postData['content'], \PDO::PARAM_STR);
+-        return $stmt->execute();
+-    }
+-
+-    public static function updatePost($postId, $postData)
+-    {
+-        $conn = DatabaseModel::getConn();
+-        $query = "UPDATE Posts SET title = :title, content = :content WHERE id = :id";
+-        $stmt = $conn->prepare($query);
+-        $stmt->bindParam(':id', $postId, \PDO::PARAM_INT);
+-        $stmt->bindParam(':title', $postData['title'], \PDO::PARAM_STR);
+-        $stmt->bindParam(':content', $postData['content'], \PDO::PARAM_STR);
+-        return $stmt->execute();
+-    }
+-
+-    public static function deletePost($postId)
+-    {
+-        $conn = DatabaseModel::getConn();
+-        $query = "DELETE FROM Posts WHERE id = :id";
+-        $stmt = $conn->prepare($query);
+-        $stmt->bindParam(':id', $postId, \PDO::PARAM_INT);
+-        return $stmt->execute();
+-    }
+-}
+Index: public_html/App/Models/UserModel.php
+===================================================================
+diff --git a/public_html/App/Models/UserModel.php b/public_html/App/Models/UserModel.php
+deleted file mode 100644
+--- a/public_html/App/Models/UserModel.php	
++++ /dev/null	
+@@ -1,125 +0,0 @@
+-<?php
+-
+-namespace App\Models;
+-
+-use App\Models\DatabaseModel;
+-use PDO;
+-
+-class UserModel extends DatabaseModel
+-{
+-    private $username;
+-
+-    /**
+-     * @return mixed
+-     */
+-    public function getUsername()
+-    {
+-        return $this->username;
+-    }
+-
+-    private $email;
+-
+-    /**
+-     * @return mixed
+-     */
+-    public function getEmail()
+-    {
+-        return $this->email;
+-    }
+-
+-    private $password;
+-
+-    /**
+-     * @return mixed
+-     */
+-    public function getPassword()
+-    {
+-        return $this->password;
+-    }
+-
+-    /**
+-     * @param $username
+-     * @param $email
+-     * @param $password
+-     */
+-    public function __construct($username, $email, $password)
+-    {
+-        $this->username = $username;
+-        $this->email = $email;
+-        $this->password = $password;
+-    }
+-
+-    public function register()
+-    {
+-        $conn = DatabaseModel::getConn();
+-        $query = "INSERT INTO Users (username, password, email) VALUES (?, ?, ?)";
+-        $stmt = $conn->prepare($query);
+-        $stmt->execute([
+-            $this->getUsername(),
+-            $this->getEmail(),
+-            $this->getPassword()
+-        ]);
+-    }
+-
+-    public static function emailExists($email){
+-
+-        $conn = DatabaseModel::getConn();
+-        $query = "SELECT COUNT(*) FROM Users WHERE email = :email";
+-        $stmt = $conn->prepare($query);
+-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+-        $stmt->execute();
+-
+-        return $stmt->fetchColumn() > 0;
+-    }
+-
+-    public static function syntaxEmail($email)
+-    {
+-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+-            return true;
+-        }
+-    }
+-
+-    public function authentificate(): bool
+-    {
+-
+-        $conn = DatabaseModel::getConn();
+-
+-        $email = $this->getEmail();
+-        $password= $this->getPassword();
+-
+-        try {
+-
+-            $query = "SELECT email, password FROM Users WHERE (email = :email) AND password = :password";
+-            $stmt = $conn->prepare($query);
+-            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+-            $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+-            $stmt->execute();
+-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+-
+-            if ($user) {
+-                return true;
+-            } else {
+-                return false;
+-            }
+-        } catch (\PDOException $e) {
+-            echo $e->getMessage();
+-        }
+-
+-        return $user;
+-    }
+-
+-    public function deconnexion()
+-    {
+-        session_start();
+-        session_unset();
+-        session_destroy();
+-
+-    }
+-
+-    public function createSessions()
+-    {
+-        $_SESSION['connect'] = 1;
+-        $_SESSION['username'] = $this->getUsername();
+-        $_SESSION['email'] = $this->getEmail();
+-    }
+-}
+Index: public_html/App/Models/VerifyModel.php
+===================================================================
+diff --git a/public_html/App/Models/VerifyModel.php b/public_html/App/Models/VerifyModel.php
+deleted file mode 100644
+--- a/public_html/App/Models/VerifyModel.php	
++++ /dev/null	
+@@ -1,17 +0,0 @@
+-<?php
+-
+-namespace App\Models;
+-
+-class VerifyModel extends DatabaseModel
+-{
+-    public static function syntaxeEmail($email)
+-    {
+-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+-            return true;
+-        }
+-
+-        header('Location : index.php');
+-        exit();
+-    }
+-
+-}
+\ No newline at end of file
+Index: public_html/App/Models/DatabaseModel.php
+===================================================================
+diff --git a/public_html/App/Models/DatabaseModel.php b/public_html/App/Models/DatabaseModel.php
+deleted file mode 100644
+--- a/public_html/App/Models/DatabaseModel.php	
++++ /dev/null	
+@@ -1,26 +0,0 @@
+-<?php
+-
+-namespace App\Models;
+-
+-class DatabaseModel
+-{
+-    private static string $host = "mysql";
+-    private static string $username = "root";
+-    private static string $password = "root";
+-    private static string $database = "blog_perfume";
+-    private static $conn;
+-
+-    public static function getConn()
+-    {
+-        if (!self::$conn) {
+-            try {
+-                self::$conn = new \PDO("mysql:host=" . self::$host . ";port=3306;dbname=" . self::$database . ";charset=UTF8", self::$username, self::$password);
+-                self::$conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+-            } catch (\PDOException $e) {
+-                die("Erreur de connexion à la base de données : " . $e->getMessage());
+-            }
+-        }
+-        return self::$conn;
+-    }
+-}
+-
+Index: public_html/App/Router.php
+===================================================================
+diff --git a/public_html/App/Router.php b/public_html/App/Router.php
+deleted file mode 100644
+--- a/public_html/App/Router.php	
++++ /dev/null	
+@@ -1,27 +0,0 @@
+-<?php
+-
+-namespace App;
+-
+-class Router
+-{
+-    protected $routes = [];
+-
+-    public function addRoute($route, $controller, $action) {
+-        $this->routes[$route] = ['controller' => $controller, 'action' => $action];
+-    }
+-
+-    /**
+-     * @throws \Exception
+-     */
+-    public function dispatch($uri) {
+-        if (array_key_exists($uri, $this->routes)) {
+-            $controller = $this->routes[$uri]['controller'];
+-            $action = $this->routes[$uri]['action'];
+-
+-            $controller = new $controller();
+-            $controller->$action();
+-        } else {
+-            throw new \Exception("No route found for URI: $uri");
+-        }
+-    }
+-}
+Index: public_html/App/routes.php
+===================================================================
+diff --git a/public_html/App/routes.php b/public_html/App/routes.php
+deleted file mode 100644
+--- a/public_html/App/routes.php	
++++ /dev/null	
+@@ -1,18 +0,0 @@
+-<?php
+-
+-
+-use App\Controllers\HomeController;
+-use App\Controllers\PostController;
+-use App\Controllers\UserController;
+-use App\Router;
+-
+-$router = new Router();
+-
+-$router->addRoute('/login', UserController::class, 'login');
+-$router->addRoute('/register', UserController::class, 'register');
+-$router->addRoute('/home', HomeController::class, 'index');
+-$router->addRoute('/create-post', PostController::class, 'create');
+-$router->addRoute('/edit-post/{postId}', PostController::class, 'edit');
+-//$router->addRoute('/post/{postId}', PostController::class, 'show');
+-
+-return $router;
+Index: public_html/App/Controllers/HomeController.php
+===================================================================
+diff --git a/public_html/App/Controllers/HomeController.php b/public_html/App/Controllers/HomeController.php
+deleted file mode 100644
+--- a/public_html/App/Controllers/HomeController.php	
++++ /dev/null	
+@@ -1,14 +0,0 @@
+-<?php
+-
+-namespace App\Controllers;
+-
+-use App\BaseController;
+-
+-class HomeController extends BaseController
+-{
+-    public function index()
+-    {
+-        return $this->render("HomeView");
+-    }
+-
+-}
+\ No newline at end of file
+Index: public_html/App/Controllers/PostController.php
+===================================================================
+diff --git a/public_html/App/Controllers/PostController.php b/public_html/App/Controllers/PostController.php
+deleted file mode 100644
+--- a/public_html/App/Controllers/PostController.php	
++++ /dev/null	
+@@ -1,130 +0,0 @@
+-<?php
+-
+-namespace App\Controllers;
+-
+-use App\BaseController;
+-use App\Models\PostModel;
+-
+-class PostController extends BaseController
+-{
+-    public function index()
+-    {
+-        $posts = PostModel::getAllPosts();
+-        return $this->render("");
+-    }
+-
+-// PostController.php
+-
+-    public function show($postId)
+-    {
+-        $post = PostModel::getPostById($postId);
+-
+-        if (!$post) {
+-            header('Location: /error');
+-            exit();
+-        }
+-
+-        $this->render("PostView", [
+-            'post' => $post,
+-        ]);
+-    }
+-
+-
+-    public function create()
+-    {
+-        $errorMessage = "";
+-        $successMessage = "";
+-
+-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+-
+-            $title = $_POST['title'] ?? '';
+-            $content = $_POST['content'] ?? '';
+-
+-            if (empty($title)) {
+-                $errorMessage = "Veuillez renseigner le titre.";
+-            } elseif (empty($content)) {
+-                $errorMessage = "Veuillez renseigner du contenu.";
+-            } else {
+-                $postData = [
+-                    'title' => $title,
+-                    'content' => $content,
+-                ];
+-
+-                $postModel = new PostModel();
+-
+-                if ($postModel->createPost($postData)) {
+-                    $successMessage = "L'article a été créé avec succès.";
+-                } else {
+-                    $errorMessage = "Une erreur est survenue lors de la création de l'article.";
+-                }
+-            }
+-        }
+-
+-        $this->render("PostsCreationView", [
+-            'errorMessage' => $errorMessage,
+-            'successMessage' => $successMessage,
+-        ]);
+-    }
+-
+-    public function edit($postId)
+-    {
+-        $errorMessage = "";
+-        $successMessage = "";
+-
+-        if (!ctype_digit($postId)) {
+-            header('Location: /error');
+-            exit();
+-        }
+-
+-        $postId = (int)$postId;
+-        $post = PostModel::getPostById($postId);
+-        var_dump($post);
+-
+-        if (!$post) {
+-            header('Location: /error');
+-            exit();
+-        }
+-
+-        if (isset($_POST['title']) && isset($_POST['content'])) {
+-
+-            $title = $_POST['title'];
+-            $content = $_POST['content'];
+-
+-            if (empty($title) || empty($content)) {
+-                $errorMessage = "Le titre et le contenu doivent être renseignés.";
+-            } else {
+-                $postData = [
+-                    'title' => $title,
+-                    'content' => $content,
+-                ];
+-
+-                $postUpdated = PostModel::updatePost($postId, $postData);
+-
+-                if ($postUpdated) {
+-                    $successMessage = "L'article a été mis à jour avec succès.";
+-                } else {
+-                    $errorMessage = "Une erreur est survenue lors de la mise à jour de l'article.";
+-                }
+-            }
+-        } else {
+-            $errorMessage = "Veuillez renseigner tous les champs du formulaire.";
+-        }
+-
+-        $this->render("PostsEditView", [
+-            'post' => $post,
+-            'errorMessage' => $errorMessage,
+-            'successMessage' => $successMessage,
+-        ]);
+-    }
+-
+-    public function delete($postId)
+-    {
+-        $result = PostModel::deletePost($postId);
+-        if ($result) {
+-            header('Location: index.php');
+-        } else {
+-            // Gérer les erreurs de suppression d'article
+-            include('Views/error.php');
+-        }
+-    }
+-}
+Index: public_html/App/Controllers/UserController.php
+===================================================================
+diff --git a/public_html/App/Controllers/UserController.php b/public_html/App/Controllers/UserController.php
+deleted file mode 100644
+--- a/public_html/App/Controllers/UserController.php	
++++ /dev/null	
+@@ -1,89 +0,0 @@
+-<?php
+-
+-namespace App\Controllers;
+-
+-use App\BaseController;
+-use App\Models\UserModel;
+-
+-class UserController extends BaseController
+-{
+-    protected function registerUser($username, $email, $password)
+-    {
+-        $user = new UserModel($username, $email, $password);
+-        $user->register();
+-        exit();
+-    }
+-
+-    protected function authentificateUser($email, $password)
+-    {
+-        $user = new UserModel(null, $email, $password);
+-
+-        if ($user->authentificate()) {
+-            $user->createSessions();
+-            header('Location: /home');
+-            exit();
+-        } else {
+-            header('Location: /login?erreur=1');
+-            exit();
+-        }
+-    }
+-
+-    protected function deconnexionUser(): void
+-    {
+-        $user = new UserModel(null, null, null);
+-        $user->deconnexion();
+-    }
+-
+-    public function login()
+-    {
+-        $errorMessage = "";
+-        if (isset($_POST['email']) && isset($_POST['password'])) {
+-
+-            $email = htmlspecialchars($_POST['email']);
+-            $password = htmlspecialchars($_POST['password']);
+-
+-             if ($this->authentificateUser($email, $password)) {
+-
+-                 header('Location: /home');
+-                 exit();
+-
+-             } else {
+-                $errorMessage = "Identifiants Incorrect";
+-             }
+-        }
+-
+-        $this->render("LoginView", ['errorMessage' => $errorMessage]);
+-    }
+-
+-    public function register()
+-    {
+-        $errorMessage = "";
+-
+-        if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
+-
+-            $email			= htmlspecialchars($_POST['email']);
+-            $username       = htmlspecialchars($_POST['username']);
+-            $password		= htmlspecialchars($_POST['password']);
+-
+-            if (!UserModel::syntaxEmail($email)) {
+-                $errorMessage = "Votre email est invalide";
+-            } else if (UserModel::emailExists($email)) {
+-                $errorMessage = "Cette email existe déjà";
+-            } else {
+-                $passwordHash = SecurityController::hashPassword($password);
+-                $this->registerUser("$username", "$email", "$password");
+-                header('Location: /login');
+-                exit();
+-            }
+-        }
+-
+-        return $this->render("RegisterView", ['errorMessage' => $errorMessage]);
+-    }
+-
+-    public function logout()
+-    {
+-        $this->deconnexionUser();
+-        header('Location: /login');
+-        exit();
+-    }
+-}
+Index: public_html/App/Controllers/VerifyController.php
+===================================================================
+diff --git a/public_html/App/Controllers/VerifyController.php b/public_html/App/Controllers/VerifyController.php
+deleted file mode 100644
+--- a/public_html/App/Controllers/VerifyController.php	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-<?php
+-
+-namespace App\Controllers;
+-
+-class VerifyController
+-{
+-
+-}
+\ No newline at end of file
+Index: public_html/App/Controllers/SecurityController.php
+===================================================================
+diff --git a/public_html/App/Controllers/SecurityController.php b/public_html/App/Controllers/SecurityController.php
+deleted file mode 100644
+--- a/public_html/App/Controllers/SecurityController.php	
++++ /dev/null	
+@@ -1,11 +0,0 @@
+-<?php
+-
+-namespace App\Controllers;
+-
+-class SecurityController
+-{
+-    public static function hashPassword($password)
+-    {
+-        return password_hash($password, PASSWORD_DEFAULT);
+-    }
+-}
+\ No newline at end of file
+Index: public_html/App/BaseController.php
+===================================================================
+diff --git a/public_html/App/BaseController.php b/public_html/App/BaseController.php
+deleted file mode 100644
+--- a/public_html/App/BaseController.php	
++++ /dev/null	
+@@ -1,12 +0,0 @@
+-<?php
+-
+-namespace App;
+-
+-class BaseController
+-{
+-    protected function render($view, $data = []) {
+-        extract($data);
+-
+-        include "Views/$view.php";
+-    }
+-}
+\ No newline at end of file
+Index: public_html/public/style/style.css
+===================================================================
+diff --git a/public_html/public/style/style.css b/public_html/public/style/style.css
+deleted file mode 100644
+--- a/public_html/public/style/style.css	
++++ /dev/null	
+@@ -1,24 +0,0 @@
+-body {
+-    //background-image: url('parfum-background.jpg');
+-    background-size: cover;
+-    background-repeat: no-repeat;
+-    background-attachment: fixed;
+-}
+-
+-.card {
+-    background-color: rgba(255, 255, 255, 0.8);
+-    border-radius: 15px;
+-}
+-
+-.form-control {
+-    border-radius: 10px;
+-}
+-
+-.btn-primary {
+-    background-color: #f5c6cb;
+-    border-color: #f5c6cb;
+-}
+-.btn-primary:hover {
+-    background-color: #f3a4b5;
+-    border-color: #f3a4b5;
+-}
+Index: public_html/vendor/composer/installed.php
+===================================================================
+diff --git a/public_html/vendor/composer/installed.php b/public_html/vendor/composer/installed.php
+deleted file mode 100644
+--- a/public_html/vendor/composer/installed.php	
++++ /dev/null	
+@@ -1,23 +0,0 @@
+-<?php return array(
+-    'root' => array(
+-        'name' => 'smajicmathias/perfume-blog',
+-        'pretty_version' => 'dev-master',
+-        'version' => 'dev-master',
+-        'reference' => 'df2bc1a5818223e0085551caeda8fbc8a0df3a28',
+-        'type' => 'library',
+-        'install_path' => __DIR__ . '/../../',
+-        'aliases' => array(),
+-        'dev' => true,
+-    ),
+-    'versions' => array(
+-        'smajicmathias/perfume-blog' => array(
+-            'pretty_version' => 'dev-master',
+-            'version' => 'dev-master',
+-            'reference' => 'df2bc1a5818223e0085551caeda8fbc8a0df3a28',
+-            'type' => 'library',
+-            'install_path' => __DIR__ . '/../../',
+-            'aliases' => array(),
+-            'dev_requirement' => false,
+-        ),
+-    ),
+-);
+Index: public_html/vendor/composer/installed.json
+===================================================================
+diff --git a/public_html/vendor/composer/installed.json b/public_html/vendor/composer/installed.json
+deleted file mode 100644
+--- a/public_html/vendor/composer/installed.json	
++++ /dev/null	
+@@ -1,5 +0,0 @@
+-{
+-    "packages": [],
+-    "dev": true,
+-    "dev-package-names": []
+-}
+Index: public_html/vendor/composer/ClassLoader.php
+===================================================================
+diff --git a/public_html/vendor/composer/ClassLoader.php b/public_html/vendor/composer/ClassLoader.php
+deleted file mode 100644
+--- a/public_html/vendor/composer/ClassLoader.php	
++++ /dev/null	
+@@ -1,585 +0,0 @@
+-<?php
+-
+-/*
+- * This file is part of Composer.
+- *
+- * (c) Nils Adermann <naderman@naderman.de>
+- *     Jordi Boggiano <j.boggiano@seld.be>
+- *
+- * For the full copyright and license information, please view the LICENSE
+- * file that was distributed with this source code.
+- */
+-
+-namespace Composer\Autoload;
+-
+-/**
+- * ClassLoader implements a PSR-0, PSR-4 and classmap class loader.
+- *
+- *     $loader = new \Composer\Autoload\ClassLoader();
+- *
+- *     // register classes with namespaces
+- *     $loader->add('Symfony\Component', __DIR__.'/component');
+- *     $loader->add('Symfony',           __DIR__.'/framework');
+- *
+- *     // activate the autoloader
+- *     $loader->register();
+- *
+- *     // to enable searching the include path (eg. for PEAR packages)
+- *     $loader->setUseIncludePath(true);
+- *
+- * In this example, if you try to use a class in the Symfony\Component
+- * namespace or one of its children (Symfony\Component\Console for instance),
+- * the autoloader will first look for the class under the component/
+- * directory, and it will then fallback to the framework/ directory if not
+- * found before giving up.
+- *
+- * This class is loosely based on the Symfony UniversalClassLoader.
+- *
+- * @author Fabien Potencier <fabien@symfony.com>
+- * @author Jordi Boggiano <j.boggiano@seld.be>
+- * @see    https://www.php-fig.org/psr/psr-0/
+- * @see    https://www.php-fig.org/psr/psr-4/
+- */
+-class ClassLoader
+-{
+-    /** @var \Closure(string):void */
+-    private static $includeFile;
+-
+-    /** @var ?string */
+-    private $vendorDir;
+-
+-    // PSR-4
+-    /**
+-     * @var array[]
+-     * @psalm-var array<string, array<string, int>>
+-     */
+-    private $prefixLengthsPsr4 = array();
+-    /**
+-     * @var array[]
+-     * @psalm-var array<string, array<int, string>>
+-     */
+-    private $prefixDirsPsr4 = array();
+-    /**
+-     * @var array[]
+-     * @psalm-var array<string, string>
+-     */
+-    private $fallbackDirsPsr4 = array();
+-
+-    // PSR-0
+-    /**
+-     * @var array[]
+-     * @psalm-var array<string, array<string, string[]>>
+-     */
+-    private $prefixesPsr0 = array();
+-    /**
+-     * @var array[]
+-     * @psalm-var array<string, string>
+-     */
+-    private $fallbackDirsPsr0 = array();
+-
+-    /** @var bool */
+-    private $useIncludePath = false;
+-
+-    /**
+-     * @var string[]
+-     * @psalm-var array<string, string>
+-     */
+-    private $classMap = array();
+-
+-    /** @var bool */
+-    private $classMapAuthoritative = false;
+-
+-    /**
+-     * @var bool[]
+-     * @psalm-var array<string, bool>
+-     */
+-    private $missingClasses = array();
+-
+-    /** @var ?string */
+-    private $apcuPrefix;
+-
+-    /**
+-     * @var self[]
+-     */
+-    private static $registeredLoaders = array();
+-
+-    /**
+-     * @param ?string $vendorDir
+-     */
+-    public function __construct($vendorDir = null)
+-    {
+-        $this->vendorDir = $vendorDir;
+-        self::initializeIncludeClosure();
+-    }
+-
+-    /**
+-     * @return string[]
+-     */
+-    public function getPrefixes()
+-    {
+-        if (!empty($this->prefixesPsr0)) {
+-            return call_user_func_array('array_merge', array_values($this->prefixesPsr0));
+-        }
+-
+-        return array();
+-    }
+-
+-    /**
+-     * @return array[]
+-     * @psalm-return array<string, array<int, string>>
+-     */
+-    public function getPrefixesPsr4()
+-    {
+-        return $this->prefixDirsPsr4;
+-    }
+-
+-    /**
+-     * @return array[]
+-     * @psalm-return array<string, string>
+-     */
+-    public function getFallbackDirs()
+-    {
+-        return $this->fallbackDirsPsr0;
+-    }
+-
+-    /**
+-     * @return array[]
+-     * @psalm-return array<string, string>
+-     */
+-    public function getFallbackDirsPsr4()
+-    {
+-        return $this->fallbackDirsPsr4;
+-    }
+-
+-    /**
+-     * @return string[] Array of classname => path
+-     * @psalm-return array<string, string>
+-     */
+-    public function getClassMap()
+-    {
+-        return $this->classMap;
+-    }
+-
+-    /**
+-     * @param string[] $classMap Class to filename map
+-     * @psalm-param array<string, string> $classMap
+-     *
+-     * @return void
+-     */
+-    public function addClassMap(array $classMap)
+-    {
+-        if ($this->classMap) {
+-            $this->classMap = array_merge($this->classMap, $classMap);
+-        } else {
+-            $this->classMap = $classMap;
+-        }
+-    }
+-
+-    /**
+-     * Registers a set of PSR-0 directories for a given prefix, either
+-     * appending or prepending to the ones previously set for this prefix.
+-     *
+-     * @param string          $prefix  The prefix
+-     * @param string[]|string $paths   The PSR-0 root directories
+-     * @param bool            $prepend Whether to prepend the directories
+-     *
+-     * @return void
+-     */
+-    public function add($prefix, $paths, $prepend = false)
+-    {
+-        if (!$prefix) {
+-            if ($prepend) {
+-                $this->fallbackDirsPsr0 = array_merge(
+-                    (array) $paths,
+-                    $this->fallbackDirsPsr0
+-                );
+-            } else {
+-                $this->fallbackDirsPsr0 = array_merge(
+-                    $this->fallbackDirsPsr0,
+-                    (array) $paths
+-                );
+-            }
+-
+-            return;
+-        }
+-
+-        $first = $prefix[0];
+-        if (!isset($this->prefixesPsr0[$first][$prefix])) {
+-            $this->prefixesPsr0[$first][$prefix] = (array) $paths;
+-
+-            return;
+-        }
+-        if ($prepend) {
+-            $this->prefixesPsr0[$first][$prefix] = array_merge(
+-                (array) $paths,
+-                $this->prefixesPsr0[$first][$prefix]
+-            );
+-        } else {
+-            $this->prefixesPsr0[$first][$prefix] = array_merge(
+-                $this->prefixesPsr0[$first][$prefix],
+-                (array) $paths
+-            );
+-        }
+-    }
+-
+-    /**
+-     * Registers a set of PSR-4 directories for a given namespace, either
+-     * appending or prepending to the ones previously set for this namespace.
+-     *
+-     * @param string          $prefix  The prefix/namespace, with trailing '\\'
+-     * @param string[]|string $paths   The PSR-4 base directories
+-     * @param bool            $prepend Whether to prepend the directories
+-     *
+-     * @throws \InvalidArgumentException
+-     *
+-     * @return void
+-     */
+-    public function addPsr4($prefix, $paths, $prepend = false)
+-    {
+-        if (!$prefix) {
+-            // Register directories for the root namespace.
+-            if ($prepend) {
+-                $this->fallbackDirsPsr4 = array_merge(
+-                    (array) $paths,
+-                    $this->fallbackDirsPsr4
+-                );
+-            } else {
+-                $this->fallbackDirsPsr4 = array_merge(
+-                    $this->fallbackDirsPsr4,
+-                    (array) $paths
+-                );
+-            }
+-        } elseif (!isset($this->prefixDirsPsr4[$prefix])) {
+-            // Register directories for a new namespace.
+-            $length = strlen($prefix);
+-            if ('\\' !== $prefix[$length - 1]) {
+-                throw new \InvalidArgumentException("A non-empty PSR-4 prefix must end with a namespace separator.");
+-            }
+-            $this->prefixLengthsPsr4[$prefix[0]][$prefix] = $length;
+-            $this->prefixDirsPsr4[$prefix] = (array) $paths;
+-        } elseif ($prepend) {
+-            // Prepend directories for an already registered namespace.
+-            $this->prefixDirsPsr4[$prefix] = array_merge(
+-                (array) $paths,
+-                $this->prefixDirsPsr4[$prefix]
+-            );
+-        } else {
+-            // Append directories for an already registered namespace.
+-            $this->prefixDirsPsr4[$prefix] = array_merge(
+-                $this->prefixDirsPsr4[$prefix],
+-                (array) $paths
+-            );
+-        }
+-    }
+-
+-    /**
+-     * Registers a set of PSR-0 directories for a given prefix,
+-     * replacing any others previously set for this prefix.
+-     *
+-     * @param string          $prefix The prefix
+-     * @param string[]|string $paths  The PSR-0 base directories
+-     *
+-     * @return void
+-     */
+-    public function set($prefix, $paths)
+-    {
+-        if (!$prefix) {
+-            $this->fallbackDirsPsr0 = (array) $paths;
+-        } else {
+-            $this->prefixesPsr0[$prefix[0]][$prefix] = (array) $paths;
+-        }
+-    }
+-
+-    /**
+-     * Registers a set of PSR-4 directories for a given namespace,
+-     * replacing any others previously set for this namespace.
+-     *
+-     * @param string          $prefix The prefix/namespace, with trailing '\\'
+-     * @param string[]|string $paths  The PSR-4 base directories
+-     *
+-     * @throws \InvalidArgumentException
+-     *
+-     * @return void
+-     */
+-    public function setPsr4($prefix, $paths)
+-    {
+-        if (!$prefix) {
+-            $this->fallbackDirsPsr4 = (array) $paths;
+-        } else {
+-            $length = strlen($prefix);
+-            if ('\\' !== $prefix[$length - 1]) {
+-                throw new \InvalidArgumentException("A non-empty PSR-4 prefix must end with a namespace separator.");
+-            }
+-            $this->prefixLengthsPsr4[$prefix[0]][$prefix] = $length;
+-            $this->prefixDirsPsr4[$prefix] = (array) $paths;
+-        }
+-    }
+-
+-    /**
+-     * Turns on searching the include path for class files.
+-     *
+-     * @param bool $useIncludePath
+-     *
+-     * @return void
+-     */
+-    public function setUseIncludePath($useIncludePath)
+-    {
+-        $this->useIncludePath = $useIncludePath;
+-    }
+-
+-    /**
+-     * Can be used to check if the autoloader uses the include path to check
+-     * for classes.
+-     *
+-     * @return bool
+-     */
+-    public function getUseIncludePath()
+-    {
+-        return $this->useIncludePath;
+-    }
+-
+-    /**
+-     * Turns off searching the prefix and fallback directories for classes
+-     * that have not been registered with the class map.
+-     *
+-     * @param bool $classMapAuthoritative
+-     *
+-     * @return void
+-     */
+-    public function setClassMapAuthoritative($classMapAuthoritative)
+-    {
+-        $this->classMapAuthoritative = $classMapAuthoritative;
+-    }
+-
+-    /**
+-     * Should class lookup fail if not found in the current class map?
+-     *
+-     * @return bool
+-     */
+-    public function isClassMapAuthoritative()
+-    {
+-        return $this->classMapAuthoritative;
+-    }
+-
+-    /**
+-     * APCu prefix to use to cache found/not-found classes, if the extension is enabled.
+-     *
+-     * @param string|null $apcuPrefix
+-     *
+-     * @return void
+-     */
+-    public function setApcuPrefix($apcuPrefix)
+-    {
+-        $this->apcuPrefix = function_exists('apcu_fetch') && filter_var(ini_get('apc.enabled'), FILTER_VALIDATE_BOOLEAN) ? $apcuPrefix : null;
+-    }
+-
+-    /**
+-     * The APCu prefix in use, or null if APCu caching is not enabled.
+-     *
+-     * @return string|null
+-     */
+-    public function getApcuPrefix()
+-    {
+-        return $this->apcuPrefix;
+-    }
+-
+-    /**
+-     * Registers this instance as an autoloader.
+-     *
+-     * @param bool $prepend Whether to prepend the autoloader or not
+-     *
+-     * @return void
+-     */
+-    public function register($prepend = false)
+-    {
+-        spl_autoload_register(array($this, 'loadClass'), true, $prepend);
+-
+-        if (null === $this->vendorDir) {
+-            return;
+-        }
+-
+-        if ($prepend) {
+-            self::$registeredLoaders = array($this->vendorDir => $this) + self::$registeredLoaders;
+-        } else {
+-            unset(self::$registeredLoaders[$this->vendorDir]);
+-            self::$registeredLoaders[$this->vendorDir] = $this;
+-        }
+-    }
+-
+-    /**
+-     * Unregisters this instance as an autoloader.
+-     *
+-     * @return void
+-     */
+-    public function unregister()
+-    {
+-        spl_autoload_unregister(array($this, 'loadClass'));
+-
+-        if (null !== $this->vendorDir) {
+-            unset(self::$registeredLoaders[$this->vendorDir]);
+-        }
+-    }
+-
+-    /**
+-     * Loads the given class or interface.
+-     *
+-     * @param  string    $class The name of the class
+-     * @return true|null True if loaded, null otherwise
+-     */
+-    public function loadClass($class)
+-    {
+-        if ($file = $this->findFile($class)) {
+-            $includeFile = self::$includeFile;
+-            $includeFile($file);
+-
+-            return true;
+-        }
+-
+-        return null;
+-    }
+-
+-    /**
+-     * Finds the path to the file where the class is defined.
+-     *
+-     * @param string $class The name of the class
+-     *
+-     * @return string|false The path if found, false otherwise
+-     */
+-    public function findFile($class)
+-    {
+-        // class map lookup
+-        if (isset($this->classMap[$class])) {
+-            return $this->classMap[$class];
+-        }
+-        if ($this->classMapAuthoritative || isset($this->missingClasses[$class])) {
+-            return false;
+-        }
+-        if (null !== $this->apcuPrefix) {
+-            $file = apcu_fetch($this->apcuPrefix.$class, $hit);
+-            if ($hit) {
+-                return $file;
+-            }
+-        }
+-
+-        $file = $this->findFileWithExtension($class, '.php');
+-
+-        // Search for Hack files if we are running on HHVM
+-        if (false === $file && defined('HHVM_VERSION')) {
+-            $file = $this->findFileWithExtension($class, '.hh');
+-        }
+-
+-        if (null !== $this->apcuPrefix) {
+-            apcu_add($this->apcuPrefix.$class, $file);
+-        }
+-
+-        if (false === $file) {
+-            // Remember that this class does not exist.
+-            $this->missingClasses[$class] = true;
+-        }
+-
+-        return $file;
+-    }
+-
+-    /**
+-     * Returns the currently registered loaders indexed by their corresponding vendor directories.
+-     *
+-     * @return self[]
+-     */
+-    public static function getRegisteredLoaders()
+-    {
+-        return self::$registeredLoaders;
+-    }
+-
+-    /**
+-     * @param  string       $class
+-     * @param  string       $ext
+-     * @return string|false
+-     */
+-    private function findFileWithExtension($class, $ext)
+-    {
+-        // PSR-4 lookup
+-        $logicalPathPsr4 = strtr($class, '\\', DIRECTORY_SEPARATOR) . $ext;
+-
+-        $first = $class[0];
+-        if (isset($this->prefixLengthsPsr4[$first])) {
+-            $subPath = $class;
+-            while (false !== $lastPos = strrpos($subPath, '\\')) {
+-                $subPath = substr($subPath, 0, $lastPos);
+-                $search = $subPath . '\\';
+-                if (isset($this->prefixDirsPsr4[$search])) {
+-                    $pathEnd = DIRECTORY_SEPARATOR . substr($logicalPathPsr4, $lastPos + 1);
+-                    foreach ($this->prefixDirsPsr4[$search] as $dir) {
+-                        if (file_exists($file = $dir . $pathEnd)) {
+-                            return $file;
+-                        }
+-                    }
+-                }
+-            }
+-        }
+-
+-        // PSR-4 fallback dirs
+-        foreach ($this->fallbackDirsPsr4 as $dir) {
+-            if (file_exists($file = $dir . DIRECTORY_SEPARATOR . $logicalPathPsr4)) {
+-                return $file;
+-            }
+-        }
+-
+-        // PSR-0 lookup
+-        if (false !== $pos = strrpos($class, '\\')) {
+-            // namespaced class name
+-            $logicalPathPsr0 = substr($logicalPathPsr4, 0, $pos + 1)
+-                . strtr(substr($logicalPathPsr4, $pos + 1), '_', DIRECTORY_SEPARATOR);
+-        } else {
+-            // PEAR-like class name
+-            $logicalPathPsr0 = strtr($class, '_', DIRECTORY_SEPARATOR) . $ext;
+-        }
+-
+-        if (isset($this->prefixesPsr0[$first])) {
+-            foreach ($this->prefixesPsr0[$first] as $prefix => $dirs) {
+-                if (0 === strpos($class, $prefix)) {
+-                    foreach ($dirs as $dir) {
+-                        if (file_exists($file = $dir . DIRECTORY_SEPARATOR . $logicalPathPsr0)) {
+-                            return $file;
+-                        }
+-                    }
+-                }
+-            }
+-        }
+-
+-        // PSR-0 fallback dirs
+-        foreach ($this->fallbackDirsPsr0 as $dir) {
+-            if (file_exists($file = $dir . DIRECTORY_SEPARATOR . $logicalPathPsr0)) {
+-                return $file;
+-            }
+-        }
+-
+-        // PSR-0 include paths.
+-        if ($this->useIncludePath && $file = stream_resolve_include_path($logicalPathPsr0)) {
+-            return $file;
+-        }
+-
+-        return false;
+-    }
+-
+-    /**
+-     * @return void
+-     */
+-    private static function initializeIncludeClosure()
+-    {
+-        if (self::$includeFile !== null) {
+-            return;
+-        }
+-
+-        /**
+-         * Scope isolated include.
+-         *
+-         * Prevents access to $this/self from included files.
+-         *
+-         * @param  string $file
+-         * @return void
+-         */
+-        self::$includeFile = \Closure::bind(static function($file) {
+-            include $file;
+-        }, null, null);
+-    }
+-}
+Index: public_html/vendor/composer/autoload_psr4.php
+===================================================================
+diff --git a/public_html/vendor/composer/autoload_psr4.php b/public_html/vendor/composer/autoload_psr4.php
+deleted file mode 100644
+--- a/public_html/vendor/composer/autoload_psr4.php	
++++ /dev/null	
+@@ -1,10 +0,0 @@
+-<?php
+-
+-// autoload_psr4.php @generated by Composer
+-
+-$vendorDir = dirname(__DIR__);
+-$baseDir = dirname($vendorDir);
+-
+-return array(
+-    'App\\' => array($baseDir . '/App'),
+-);
+Index: public_html/vendor/composer/autoload_real.php
+===================================================================
+diff --git a/public_html/vendor/composer/autoload_real.php b/public_html/vendor/composer/autoload_real.php
+deleted file mode 100644
+--- a/public_html/vendor/composer/autoload_real.php	
++++ /dev/null	
+@@ -1,36 +0,0 @@
+-<?php
+-
+-// autoload_real.php @generated by Composer
+-
+-class ComposerAutoloaderInitec4a11a1095c93c290ba3a8d52f1882e
+-{
+-    private static $loader;
+-
+-    public static function loadClassLoader($class)
+-    {
+-        if ('Composer\Autoload\ClassLoader' === $class) {
+-            require __DIR__ . '/ClassLoader.php';
+-        }
+-    }
+-
+-    /**
+-     * @return \Composer\Autoload\ClassLoader
+-     */
+-    public static function getLoader()
+-    {
+-        if (null !== self::$loader) {
+-            return self::$loader;
+-        }
+-
+-        spl_autoload_register(array('ComposerAutoloaderInitec4a11a1095c93c290ba3a8d52f1882e', 'loadClassLoader'), true, true);
+-        self::$loader = $loader = new \Composer\Autoload\ClassLoader(\dirname(__DIR__));
+-        spl_autoload_unregister(array('ComposerAutoloaderInitec4a11a1095c93c290ba3a8d52f1882e', 'loadClassLoader'));
+-
+-        require __DIR__ . '/autoload_static.php';
+-        call_user_func(\Composer\Autoload\ComposerStaticInitec4a11a1095c93c290ba3a8d52f1882e::getInitializer($loader));
+-
+-        $loader->register(true);
+-
+-        return $loader;
+-    }
+-}
+Index: public_html/vendor/composer/autoload_static.php
+===================================================================
+diff --git a/public_html/vendor/composer/autoload_static.php b/public_html/vendor/composer/autoload_static.php
+deleted file mode 100644
+--- a/public_html/vendor/composer/autoload_static.php	
++++ /dev/null	
+@@ -1,36 +0,0 @@
+-<?php
+-
+-// autoload_static.php @generated by Composer
+-
+-namespace Composer\Autoload;
+-
+-class ComposerStaticInitec4a11a1095c93c290ba3a8d52f1882e
+-{
+-    public static $prefixLengthsPsr4 = array (
+-        'A' => 
+-        array (
+-            'App\\' => 4,
+-        ),
+-    );
+-
+-    public static $prefixDirsPsr4 = array (
+-        'App\\' => 
+-        array (
+-            0 => __DIR__ . '/../..' . '/App',
+-        ),
+-    );
+-
+-    public static $classMap = array (
+-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+-    );
+-
+-    public static function getInitializer(ClassLoader $loader)
+-    {
+-        return \Closure::bind(function () use ($loader) {
+-            $loader->prefixLengthsPsr4 = ComposerStaticInitec4a11a1095c93c290ba3a8d52f1882e::$prefixLengthsPsr4;
+-            $loader->prefixDirsPsr4 = ComposerStaticInitec4a11a1095c93c290ba3a8d52f1882e::$prefixDirsPsr4;
+-            $loader->classMap = ComposerStaticInitec4a11a1095c93c290ba3a8d52f1882e::$classMap;
+-
+-        }, null, ClassLoader::class);
+-    }
+-}
+Index: public_html/vendor/composer/autoload_classmap.php
+===================================================================
+diff --git a/public_html/vendor/composer/autoload_classmap.php b/public_html/vendor/composer/autoload_classmap.php
+deleted file mode 100644
+--- a/public_html/vendor/composer/autoload_classmap.php	
++++ /dev/null	
+@@ -1,10 +0,0 @@
+-<?php
+-
+-// autoload_classmap.php @generated by Composer
+-
+-$vendorDir = dirname(__DIR__);
+-$baseDir = dirname($vendorDir);
+-
+-return array(
+-    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+-);
+Index: public_html/vendor/composer/InstalledVersions.php
+===================================================================
+diff --git a/public_html/vendor/composer/InstalledVersions.php b/public_html/vendor/composer/InstalledVersions.php
+deleted file mode 100644
+--- a/public_html/vendor/composer/InstalledVersions.php	
++++ /dev/null	
+@@ -1,359 +0,0 @@
+-<?php
+-
+-/*
+- * This file is part of Composer.
+- *
+- * (c) Nils Adermann <naderman@naderman.de>
+- *     Jordi Boggiano <j.boggiano@seld.be>
+- *
+- * For the full copyright and license information, please view the LICENSE
+- * file that was distributed with this source code.
+- */
+-
+-namespace Composer;
+-
+-use Composer\Autoload\ClassLoader;
+-use Composer\Semver\VersionParser;
+-
+-/**
+- * This class is copied in every Composer installed project and available to all
+- *
+- * See also https://getcomposer.org/doc/07-runtime.md#installed-versions
+- *
+- * To require its presence, you can require `composer-runtime-api ^2.0`
+- *
+- * @final
+- */
+-class InstalledVersions
+-{
+-    /**
+-     * @var mixed[]|null
+-     * @psalm-var array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>}|array{}|null
+-     */
+-    private static $installed;
+-
+-    /**
+-     * @var bool|null
+-     */
+-    private static $canGetVendors;
+-
+-    /**
+-     * @var array[]
+-     * @psalm-var array<string, array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>}>
+-     */
+-    private static $installedByVendor = array();
+-
+-    /**
+-     * Returns a list of all package names which are present, either by being installed, replaced or provided
+-     *
+-     * @return string[]
+-     * @psalm-return list<string>
+-     */
+-    public static function getInstalledPackages()
+-    {
+-        $packages = array();
+-        foreach (self::getInstalled() as $installed) {
+-            $packages[] = array_keys($installed['versions']);
+-        }
+-
+-        if (1 === \count($packages)) {
+-            return $packages[0];
+-        }
+-
+-        return array_keys(array_flip(\call_user_func_array('array_merge', $packages)));
+-    }
+-
+-    /**
+-     * Returns a list of all package names with a specific type e.g. 'library'
+-     *
+-     * @param  string   $type
+-     * @return string[]
+-     * @psalm-return list<string>
+-     */
+-    public static function getInstalledPackagesByType($type)
+-    {
+-        $packagesByType = array();
+-
+-        foreach (self::getInstalled() as $installed) {
+-            foreach ($installed['versions'] as $name => $package) {
+-                if (isset($package['type']) && $package['type'] === $type) {
+-                    $packagesByType[] = $name;
+-                }
+-            }
+-        }
+-
+-        return $packagesByType;
+-    }
+-
+-    /**
+-     * Checks whether the given package is installed
+-     *
+-     * This also returns true if the package name is provided or replaced by another package
+-     *
+-     * @param  string $packageName
+-     * @param  bool   $includeDevRequirements
+-     * @return bool
+-     */
+-    public static function isInstalled($packageName, $includeDevRequirements = true)
+-    {
+-        foreach (self::getInstalled() as $installed) {
+-            if (isset($installed['versions'][$packageName])) {
+-                return $includeDevRequirements || !isset($installed['versions'][$packageName]['dev_requirement']) || $installed['versions'][$packageName]['dev_requirement'] === false;
+-            }
+-        }
+-
+-        return false;
+-    }
+-
+-    /**
+-     * Checks whether the given package satisfies a version constraint
+-     *
+-     * e.g. If you want to know whether version 2.3+ of package foo/bar is installed, you would call:
+-     *
+-     *   Composer\InstalledVersions::satisfies(new VersionParser, 'foo/bar', '^2.3')
+-     *
+-     * @param  VersionParser $parser      Install composer/semver to have access to this class and functionality
+-     * @param  string        $packageName
+-     * @param  string|null   $constraint  A version constraint to check for, if you pass one you have to make sure composer/semver is required by your package
+-     * @return bool
+-     */
+-    public static function satisfies(VersionParser $parser, $packageName, $constraint)
+-    {
+-        $constraint = $parser->parseConstraints((string) $constraint);
+-        $provided = $parser->parseConstraints(self::getVersionRanges($packageName));
+-
+-        return $provided->matches($constraint);
+-    }
+-
+-    /**
+-     * Returns a version constraint representing all the range(s) which are installed for a given package
+-     *
+-     * It is easier to use this via isInstalled() with the $constraint argument if you need to check
+-     * whether a given version of a package is installed, and not just whether it exists
+-     *
+-     * @param  string $packageName
+-     * @return string Version constraint usable with composer/semver
+-     */
+-    public static function getVersionRanges($packageName)
+-    {
+-        foreach (self::getInstalled() as $installed) {
+-            if (!isset($installed['versions'][$packageName])) {
+-                continue;
+-            }
+-
+-            $ranges = array();
+-            if (isset($installed['versions'][$packageName]['pretty_version'])) {
+-                $ranges[] = $installed['versions'][$packageName]['pretty_version'];
+-            }
+-            if (array_key_exists('aliases', $installed['versions'][$packageName])) {
+-                $ranges = array_merge($ranges, $installed['versions'][$packageName]['aliases']);
+-            }
+-            if (array_key_exists('replaced', $installed['versions'][$packageName])) {
+-                $ranges = array_merge($ranges, $installed['versions'][$packageName]['replaced']);
+-            }
+-            if (array_key_exists('provided', $installed['versions'][$packageName])) {
+-                $ranges = array_merge($ranges, $installed['versions'][$packageName]['provided']);
+-            }
+-
+-            return implode(' || ', $ranges);
+-        }
+-
+-        throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
+-    }
+-
+-    /**
+-     * @param  string      $packageName
+-     * @return string|null If the package is being replaced or provided but is not really installed, null will be returned as version, use satisfies or getVersionRanges if you need to know if a given version is present
+-     */
+-    public static function getVersion($packageName)
+-    {
+-        foreach (self::getInstalled() as $installed) {
+-            if (!isset($installed['versions'][$packageName])) {
+-                continue;
+-            }
+-
+-            if (!isset($installed['versions'][$packageName]['version'])) {
+-                return null;
+-            }
+-
+-            return $installed['versions'][$packageName]['version'];
+-        }
+-
+-        throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
+-    }
+-
+-    /**
+-     * @param  string      $packageName
+-     * @return string|null If the package is being replaced or provided but is not really installed, null will be returned as version, use satisfies or getVersionRanges if you need to know if a given version is present
+-     */
+-    public static function getPrettyVersion($packageName)
+-    {
+-        foreach (self::getInstalled() as $installed) {
+-            if (!isset($installed['versions'][$packageName])) {
+-                continue;
+-            }
+-
+-            if (!isset($installed['versions'][$packageName]['pretty_version'])) {
+-                return null;
+-            }
+-
+-            return $installed['versions'][$packageName]['pretty_version'];
+-        }
+-
+-        throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
+-    }
+-
+-    /**
+-     * @param  string      $packageName
+-     * @return string|null If the package is being replaced or provided but is not really installed, null will be returned as reference
+-     */
+-    public static function getReference($packageName)
+-    {
+-        foreach (self::getInstalled() as $installed) {
+-            if (!isset($installed['versions'][$packageName])) {
+-                continue;
+-            }
+-
+-            if (!isset($installed['versions'][$packageName]['reference'])) {
+-                return null;
+-            }
+-
+-            return $installed['versions'][$packageName]['reference'];
+-        }
+-
+-        throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
+-    }
+-
+-    /**
+-     * @param  string      $packageName
+-     * @return string|null If the package is being replaced or provided but is not really installed, null will be returned as install path. Packages of type metapackages also have a null install path.
+-     */
+-    public static function getInstallPath($packageName)
+-    {
+-        foreach (self::getInstalled() as $installed) {
+-            if (!isset($installed['versions'][$packageName])) {
+-                continue;
+-            }
+-
+-            return isset($installed['versions'][$packageName]['install_path']) ? $installed['versions'][$packageName]['install_path'] : null;
+-        }
+-
+-        throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
+-    }
+-
+-    /**
+-     * @return array
+-     * @psalm-return array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}
+-     */
+-    public static function getRootPackage()
+-    {
+-        $installed = self::getInstalled();
+-
+-        return $installed[0]['root'];
+-    }
+-
+-    /**
+-     * Returns the raw installed.php data for custom implementations
+-     *
+-     * @deprecated Use getAllRawData() instead which returns all datasets for all autoloaders present in the process. getRawData only returns the first dataset loaded, which may not be what you expect.
+-     * @return array[]
+-     * @psalm-return array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>}
+-     */
+-    public static function getRawData()
+-    {
+-        @trigger_error('getRawData only returns the first dataset loaded, which may not be what you expect. Use getAllRawData() instead which returns all datasets for all autoloaders present in the process.', E_USER_DEPRECATED);
+-
+-        if (null === self::$installed) {
+-            // only require the installed.php file if this file is loaded from its dumped location,
+-            // and not from its source location in the composer/composer package, see https://github.com/composer/composer/issues/9937
+-            if (substr(__DIR__, -8, 1) !== 'C') {
+-                self::$installed = include __DIR__ . '/installed.php';
+-            } else {
+-                self::$installed = array();
+-            }
+-        }
+-
+-        return self::$installed;
+-    }
+-
+-    /**
+-     * Returns the raw data of all installed.php which are currently loaded for custom implementations
+-     *
+-     * @return array[]
+-     * @psalm-return list<array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>}>
+-     */
+-    public static function getAllRawData()
+-    {
+-        return self::getInstalled();
+-    }
+-
+-    /**
+-     * Lets you reload the static array from another file
+-     *
+-     * This is only useful for complex integrations in which a project needs to use
+-     * this class but then also needs to execute another project's autoloader in process,
+-     * and wants to ensure both projects have access to their version of installed.php.
+-     *
+-     * A typical case would be PHPUnit, where it would need to make sure it reads all
+-     * the data it needs from this class, then call reload() with
+-     * `require $CWD/vendor/composer/installed.php` (or similar) as input to make sure
+-     * the project in which it runs can then also use this class safely, without
+-     * interference between PHPUnit's dependencies and the project's dependencies.
+-     *
+-     * @param  array[] $data A vendor/composer/installed.php data set
+-     * @return void
+-     *
+-     * @psalm-param array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>} $data
+-     */
+-    public static function reload($data)
+-    {
+-        self::$installed = $data;
+-        self::$installedByVendor = array();
+-    }
+-
+-    /**
+-     * @return array[]
+-     * @psalm-return list<array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>}>
+-     */
+-    private static function getInstalled()
+-    {
+-        if (null === self::$canGetVendors) {
+-            self::$canGetVendors = method_exists('Composer\Autoload\ClassLoader', 'getRegisteredLoaders');
+-        }
+-
+-        $installed = array();
+-
+-        if (self::$canGetVendors) {
+-            foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
+-                if (isset(self::$installedByVendor[$vendorDir])) {
+-                    $installed[] = self::$installedByVendor[$vendorDir];
+-                } elseif (is_file($vendorDir.'/composer/installed.php')) {
+-                    /** @var array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>} $required */
+-                    $required = require $vendorDir.'/composer/installed.php';
+-                    $installed[] = self::$installedByVendor[$vendorDir] = $required;
+-                    if (null === self::$installed && strtr($vendorDir.'/composer', '\\', '/') === strtr(__DIR__, '\\', '/')) {
+-                        self::$installed = $installed[count($installed) - 1];
+-                    }
+-                }
+-            }
+-        }
+-
+-        if (null === self::$installed) {
+-            // only require the installed.php file if this file is loaded from its dumped location,
+-            // and not from its source location in the composer/composer package, see https://github.com/composer/composer/issues/9937
+-            if (substr(__DIR__, -8, 1) !== 'C') {
+-                /** @var array{root: array{name: string, pretty_version: string, version: string, reference: string|null, type: string, install_path: string, aliases: string[], dev: bool}, versions: array<string, array{pretty_version?: string, version?: string, reference?: string|null, type?: string, install_path?: string, aliases?: string[], dev_requirement: bool, replaced?: string[], provided?: string[]}>} $required */
+-                $required = require __DIR__ . '/installed.php';
+-                self::$installed = $required;
+-            } else {
+-                self::$installed = array();
+-            }
+-        }
+-
+-        if (self::$installed !== array()) {
+-            $installed[] = self::$installed;
+-        }
+-
+-        return $installed;
+-    }
+-}
+Index: public_html/vendor/composer/autoload_namespaces.php
+===================================================================
+diff --git a/public_html/vendor/composer/autoload_namespaces.php b/public_html/vendor/composer/autoload_namespaces.php
+deleted file mode 100644
+--- a/public_html/vendor/composer/autoload_namespaces.php	
++++ /dev/null	
+@@ -1,9 +0,0 @@
+-<?php
+-
+-// autoload_namespaces.php @generated by Composer
+-
+-$vendorDir = dirname(__DIR__);
+-$baseDir = dirname($vendorDir);
+-
+-return array(
+-);
+Index: public_html/vendor/autoload.php
+===================================================================
+diff --git a/public_html/vendor/autoload.php b/public_html/vendor/autoload.php
+deleted file mode 100644
+--- a/public_html/vendor/autoload.php	
++++ /dev/null	
+@@ -1,25 +0,0 @@
+-<?php
+-
+-// autoload.php @generated by Composer
+-
+-if (PHP_VERSION_ID < 50600) {
+-    if (!headers_sent()) {
+-        header('HTTP/1.1 500 Internal Server Error');
+-    }
+-    $err = 'Composer 2.3.0 dropped support for autoloading on PHP <5.6 and you are running '.PHP_VERSION.', please upgrade PHP or use Composer 2.2 LTS via "composer self-update --2.2". Aborting.'.PHP_EOL;
+-    if (!ini_get('display_errors')) {
+-        if (PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg') {
+-            fwrite(STDERR, $err);
+-        } elseif (!headers_sent()) {
+-            echo $err;
+-        }
+-    }
+-    trigger_error(
+-        $err,
+-        E_USER_ERROR
+-    );
+-}
+-
+-require_once __DIR__ . '/composer/autoload_real.php';
+-
+-return ComposerAutoloaderInitec4a11a1095c93c290ba3a8d52f1882e::getLoader();
+Index: public_html/index.php
+===================================================================
+diff --git a/public_html/index.php b/public_html/index.php
+deleted file mode 100644
+--- a/public_html/index.php	
++++ /dev/null	
+@@ -1,6 +0,0 @@
+-<?php
+-require 'vendor/autoload.php';
+-
+-$uri = $_SERVER['REQUEST_URI'];
+-$router = require 'App/routes.php';
+-$router->dispatch($uri);
+Index: public_html/README.md
+===================================================================
+diff --git a/public_html/README.md b/public_html/README.md
+deleted file mode 100644
+--- a/public_html/README.md	
++++ /dev/null	
+@@ -1,1 +0,0 @@
+-# perfumeBlog
+\ No newline at end of file
+Index: public_html/xdebug.php
+===================================================================
+diff --git a/public_html/xdebug.php b/public_html/xdebug.php
+deleted file mode 100644
+--- a/public_html/xdebug.php	
++++ /dev/null	
+@@ -1,3 +0,0 @@
+-<?php
+-
+-var_dump($_SERVER);
+Index: public_html/composer.json
+===================================================================
+diff --git a/public_html/composer.json b/public_html/composer.json
+deleted file mode 100644
+--- a/public_html/composer.json	
++++ /dev/null	
+@@ -1,18 +0,0 @@
+-{
+-    "name": "smajicmathias/perfume-blog",
+-    "autoload": {
+-        "psr-4": {
+-            "App\\": "App/"
+-        }
+-    },
+-    "authors": [
+-        {
+-            "name": "mathias-smj",
+-            "email": "91052046+mathias-smj@users.noreply.github.com"
+-        }
+-    ],
+-    "require": {
+-        "ext-pdo": "*",
+-        "ext-ctype": "*"
+-    }
+-}
+Index: public_html/composer.lock
+===================================================================
+diff --git a/public_html/composer.lock b/public_html/composer.lock
+deleted file mode 100644
+--- a/public_html/composer.lock	
++++ /dev/null	
+@@ -1,20 +0,0 @@
+-{
+-    "_readme": [
+-        "This file locks the dependencies of your project to a known state",
+-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+-        "This file is @generated automatically"
+-    ],
+-    "content-hash": "801906aa163d4e913a4a6f2a5e6af53c",
+-    "packages": [],
+-    "packages-dev": [],
+-    "aliases": [],
+-    "minimum-stability": "stable",
+-    "stability-flags": [],
+-    "prefer-stable": false,
+-    "prefer-lowest": false,
+-    "platform": {
+-        "ext-pdo": "*"
+-    },
+-    "platform-dev": [],
+-    "plugin-api-version": "2.3.0"
+-}
+diff --git a/public_html/vendor/composer/LICENSE b/public_html/vendor/composer/LICENSE
+deleted file mode 100644
+index f27399a042d95c4708af3a8c74d35d338763cf8f..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+Hc$@<O00001
+
