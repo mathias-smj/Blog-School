@@ -1,10 +1,10 @@
 <?php
 
 
-use App\Controllers\HomeController;
-use App\Controllers\PostController;
-use App\Controllers\UserController;
-use App\Router;
+use app\Controllers\HomeController;
+use app\Controllers\PostController;
+use app\Controllers\UserController;
+use app\Router;
 
 $router = new Router();
 

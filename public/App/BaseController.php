@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace app;
 
-use App\utils\SessionTool;
+use app\utils\SessionTool;
 
 class BaseController
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\utils;
+namespace app\utils;
 
-use App\Models\UserModel;
+use app\Models\UserModel;
 
 class SessionTool
 {

@@ -20,12 +20,12 @@
         <a href="/logout">Logout</a>
     </nav>
     <main class="sb-container">
-      <?php include ('layout/header.php') ?>
+      <?php include('layout/header.php') ?>
        <!-- Contenu de la page -->
         <div>
             <?php echo $content ?>
         </div>
-      <?php include ('layout/footer.php') ?>
+      <?php include('layout/footer.php') ?>
     </main>
 </body>
 </html>

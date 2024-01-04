@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace app;
 
 use Exception;
 
@@ -11,7 +11,7 @@ class Router
      *
      * @var array
      */
-    protected $routes = [];
+    protected array $routes = [];
 
     /**
      * Add a new route to the router.

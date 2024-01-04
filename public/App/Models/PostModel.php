@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
-use App\BaseController;
-use App\Models\DatabaseModel;
+namespace app\Models;
+use app\BaseController;
+use app\Models\DatabaseModel;
 
 class PostModel
 {

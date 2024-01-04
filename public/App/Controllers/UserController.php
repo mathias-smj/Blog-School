@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controllers;
+namespace app\Controllers;
 
-use App\BaseController;
-use App\Models\UserModel;
-use App\utils\SecurityTool;
-use App\utils\SessionTool;
-use App\utils\ValidationTool;
+use app\BaseController;
+use app\Models\UserModel;
+use app\utils\SecurityTool;
+use app\utils\SessionTool;
+use app\utils\ValidationTool;
 
 
 class UserController extends BaseController

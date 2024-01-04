@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace app\Controllers;
 
-use App\BaseController;
-use App\Models\PostModel;
-use App\utils\SessionTool;
+use app\BaseController;
+use app\Models\PostModel;
+use app\utils\SessionTool;
 
 class HomeController extends BaseController
 {
